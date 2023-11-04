@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+    /* Going for more of a desktop layout here just for lessons. Google's own docs use more of a mobile layout. */
+      html, body {
+
+      }
+      #map {
+        width:800px;
+        height: 600px;
+        margin:auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      function initMap(){
+        var mapOptions = {
+            center: new google.maps.LatLng(31.32630825957205, 75.57627913197591),
+            zoom: 15,// from 0-23 (for hi-res locations)
+            mapTypeId: google.maps.MapTypeId.HYBRID, // ROADMAP, HYBRID, TERRAIN, SATELLITE, HYBRID,
+            zoomControl: false,
+            streetViewControl: false
+        };
+        var map = new google.maps.Map(document.getElementById("map"),
+        mapOptions);
+      }
+     
+    </script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqMDacpC5wrhXubaS3dFYNO5kep1h0ZcU&callback=initMap" async defer></script>
+    
+  </body>
+</html>

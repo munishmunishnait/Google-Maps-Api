@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Overlay - Marker</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+    /* Going for more of a desktop layout here just for lessons. Google's own docs use more of a mobile layout. */
+      html, body {
+
+      }
+      #map {
+        width:800px;
+        height: 600px;
+        margin:auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+      function initMap(){
+        var mapOptions = {
+            center: new google.maps.LatLng(53.56900487651812, -113.50667495667288),
+            zoom: 15,
+            mapTypeId: google.maps.MapTypeId.HYBRID
+        };
+        var map = new google.maps.Map(document.getElementById("map"),
+        mapOptions);
+
+        // create one or more markers
+        var naitMarker = new google.maps.Marker({
+            position: new google.maps.LatLng(53.56900487651812, -113.50667495667288),
+            map:map,
+            title:"Northern Alberta Institute Of Technology in Edmonton",
+            icon: "icons/sportscar.png"
+        });
+
+        var KingswayMarker = new google.maps.Marker({
+            position: new google.maps.LatLng(53.56377300229149, -113.50567469193864),
+            map:map,
+            title:"Kingsway Mall",
+            icon: "icons/beergarden.png",
+            animation: google.maps.Animation.DROP
+        });
+      }
+     
+    </script>
+    <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script> -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqMDacpC5wrhXubaS3dFYNO5kep1h0ZcU&callback=initMap" async defer></script>
+    
+  </body>
+</html>

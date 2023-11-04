@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multi Locations</title>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <style>
+    /* Going for more of a desktop layout here just for lessons. Google's own docs use more of a mobile layout. */
+      html, body {
+
+      }
+      #map {
+        width:800px;
+        height: 600px;
+        margin:auto;
+      }
+    </style>
+        <script>
+
+            function gotoVancouver(){
+              var mapOptions = {
+                  center: new google.maps.LatLng(49.209984497297974, -123.17885169208374),
+                  zoom: 15,// from 0-23 (for hi-res locations)
+                  mapTypeId: google.maps.MapTypeId.HYBRID, // ROADMAP, HYBRID, TERRAIN, SATELLITE, HYBRID,
+                  zoomControl: false,
+                  streetViewControl: false
+              };
+              var map = new google.maps.Map(document.getElementById("map"),
+              mapOptions);
+            };
+
+            function gotoCalgary(){
+              var mapOptions = {
+                  center: new google.maps.LatLng(51.04767499374002, -114.08358793084189),
+                  zoom: 15,// from 0-23 (for hi-res locations)
+                  mapTypeId: google.maps.MapTypeId.HYBRID, // ROADMAP, HYBRID, TERRAIN, SATELLITE, HYBRID,
+                  zoomControl: false,
+                  streetViewControl: false
+              };
+              var map = new google.maps.Map(document.getElementById("map"),
+              mapOptions);
+            };
+
+            function gotoEdmonton(){
+              var mapOptions = {
+                  center: new google.maps.LatLng(53.56900487651812, -113.50667495667288),
+                  zoom: 15,// from 0-23 (for hi-res locations)
+                  mapTypeId: google.maps.MapTypeId.HYBRID, // ROADMAP, HYBRID, TERRAIN, SATELLITE, HYBRID,
+                  zoomControl: false,
+                  streetViewControl: false
+              };
+              var map = new google.maps.Map(document.getElementById("map"),
+              mapOptions);
+            };
+           
+            </script>
+            <!-- <script src="https://maps.googleapis.com/maps/api/js?callback=initMap" async defer></script> -->
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCqMDacpC5wrhXubaS3dFYNO5kep1h0ZcU&callback=gotoVancouver" async defer></script>
+  </head>
+  <body>
+    <h1>Our Corporate Offices</h1>
+    <a href="javascript:gotoVancouver()">Vancouver</a>
+    <a href="javascript:gotoCalgary()">Calgary</a>
+    <a href="javascript:gotoEdmonton()">Edmonton</a>
+    <div id="map"></div>
+
+    
+  </body>
+</html>
